@@ -13,6 +13,8 @@ A quick React centric Javascript refresh before diving back into React
 `for (let i = 0; i < 5; i++) {`<br>
 `console.log(i)`<br>
 
+---
+
 ## Objects
 Objects in Javascript are collections of key/value pairs
 
@@ -28,4 +30,52 @@ For example, this syntax is handy when receiving a dynamic value and changing/as
 `const targetMember = 'name`;<br>
 `person[targetMember.value] = 'John'`<br>
 
-##
+---
+
+## `this` Keyword
+Unlike other languages, `this` retrns a reference to the current object if the call is in a method (function with in an object).
+If `this` stands alone it will return the global object (window object)
+
+```
+const soda = {
+  name: "coke",
+  fizz(){
+    console.log(this)
+  }
+}
+```
+
+#### Binding This
+`this` can be bound to an object, allowing for it to be used outside the context of a function and still return an object reference.
+`const fizz = coke.fizz.bind(soda)`
+
+---
+
+## Arrow Functions
+Two simple use cases for arrow functions. Similar to Java Lambdas.
+
+```
+const square = function(number) {
+  return number * number;
+}
+```
+becomes...
+
+`const square = number => number * number;`
+
+and
+```
+const users = [
+  {id: 1, isActive: true},
+  {id: 2, isActive: true},
+  {id: 3, isActive: false},
+];
+```
+plus <br>
+`const activeUsers = jobs.filter(user) {return user.isAtcive})`<br>
+
+becomes...<br>
+
+`const activeUsers = jobs.filter(user => user.isActive)`
+
+#### Arrow Funcation and `this`
