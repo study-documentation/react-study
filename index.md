@@ -72,6 +72,7 @@ const users = [
 ];
 ```
 plus <br>
+
 `const activeUsers = jobs.filter(user) {return user.isAtcive})`<br>
 
 becomes...<br>
@@ -79,3 +80,123 @@ becomes...<br>
 `const activeUsers = jobs.filter(user => user.isActive)`
 
 #### Arrow Funcation and `this`
+Functions do not bind this. They will return the global object. This can be solved via arrow function which inherit `this` in the context of the function.
+
+---
+
+# Array.map Method
+This is useful for rendering lists.<br>
+
+`const sauruses = ['broto', 'tyranno', 'dilopho']`<br>
+
+can be mapped via...  
+
+`const dinos = sauruses.map(saurus => '<li>${saurus}</li>')`<br>
+note also that a template literal is being used in place of concatenation.<br>
+
+---
+
+# Object Destructuring
+This is a way to have cleaner code while working with objects. Lets say the following object exists...  
+```
+const address = {
+    street: '',
+    city: '',
+    zip: ''
+};
+```
+
+The code that follows is smelly...  
+
+```
+const street = address.street;
+const city = address.city;
+const zip = address.zip;
+```
+
+This code is cleaner and does the exact same thing via object destructuring.
+
+`const {street, city, zip} = address;`
+
+---
+
+# Spread Operator
+This is a means for concatenating arrays or cloning objects but with more control over where those objects end up.
+For example,  
+
+```
+const first = [1,2,3];
+const second = [4,5,6];
+const combined= [...first, ...second]
+```
+
+Using the spread operator (`...`) allows for the insertion of other elements variously throughout the combined array.
+
+---
+
+# Classes
+
+```
+class Dino {
+  constructor(name){
+      this.name = name;
+    }
+    walk() {
+      console.log("I just did a walk");
+    }
+ }
+ 
+ const genericDino = new Dino("Steve");
+```
+
+---
+
+# Inheritance
+
+```
+class Meateater extends Dino {
+  constructor(name, type){
+    super(name);
+    this.type = type
+  }
+  
+  chomp() {
+    console.log("chomp chomp")
+  }
+}
+
+const Abigail = new Meateater("Abigail", "Velociraptor");
+```
+
+---
+
+# Modules
+The two examples above in the same file would create bloated coded. Creating Modules is the Javascript way of dealing with this. Places these classes in separate files and use the javascript import/export convention to create interactions. Javascript classes default to private, making the export convention neceessary.
+
+```
+import { Dino } from "./Dino"
+export Meateater extends Dino(){}
+```
+
+Javascript allows for named exports as well. 
+
+```
+import { Person } from "./person"
+
+export function promote() {}
+
+class Teacher extends Person {
+    constructor(name, degree) {
+        super(name);
+        this.degree = degree;
+    }
+
+    teach() {
+        console.log("teach")
+    }
+}
+```
+
+In the snippet above the `promote` function can be exported on its own.
+
+---
