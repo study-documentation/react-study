@@ -223,9 +223,20 @@ In the snippet above the `promote` function can be exported on its own.
 
 ## Prerequisites
 
-Install node @ [node.org](https://nodejs.org/en/)
+1. Install node @ [node.org](https://nodejs.org/en/)
 
-enter `npm i -g create-react-app` in terminal
+2. enter `npm i -g create-react-app` in terminal
+
+3. create a new project via...<br>
+   `create-react-app <app name>`<br>
+   `npm install`<br>
+   `npm start`<br>
+
+For custom configs run<br>
+`npm run eject`<br>
+Then make desired changes to package.json<br>
+
+#### Optional: NVM
 
 Install NVM to switch between different node versions for different projects.
 In the terminal:
@@ -243,3 +254,7 @@ Once nvm is installed it can be used in projects via the following commands.<br>
 `nvm use <node version>`<br>
 `npm install`<br>
 `npm start`<br>
+
+---
+
+## Getting Started / Code Snippets
