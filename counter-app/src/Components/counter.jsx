@@ -6,7 +6,7 @@ class Counter extends Component {
     state = {  
     count: 0,
     //added to render a list
-    tags: []
+    tags: ['tag1','tag2','tag3']
 
 };
 
