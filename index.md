@@ -238,7 +238,7 @@ This should add the source lines to the path. This can be checked in the termina
 
 `nano ~/.zshrc` <br>
 
-Once nvm is installed it can be used in projects via the following commands.
+Once nvm is installed it can be used in projects via the following commands.<br>
 `nvm install <node version>`<br>
 `nvm use <node version>`<br>
 `npm install`<br>
